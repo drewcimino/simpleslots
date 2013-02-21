@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  wager: 1
+  payout: 1
+
+two:
+  wager: 1
+  payout: 1
