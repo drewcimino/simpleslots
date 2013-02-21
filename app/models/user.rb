@@ -10,6 +10,4 @@ class User < ActiveRecord::Base
   attr_accessible :balance, :password, :username
   has_many :games, :dependent => :destroy
   
-  before_filter :authenticate_user!
-  
 end
