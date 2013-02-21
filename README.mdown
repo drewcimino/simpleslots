@@ -1,0 +1,26 @@
+## Simpleslots
+
+### What is this?
+
+It's a simple slot machine app for demoing some game placement prototypes.
+
+### Who cares?
+
+The PlayRay team, RAY itself, and maybe even some other folks at ADF.
+
+### Fine, how do I run it?
+
+	git clone git@github.com:drewcimino/simpleslots.git
+	
+Set up your db info in config/database.yml. If you're using something other than mysql, find the adapter and add it to your Gemfile.
+
+	bundle install
+	rake db:create
+	rake db:migrate
+	rails server
+	
+For the record, I'm running Ruby 1.9.3 on Rails 3.2.8 under RVM. That's the prescription. If you want to use another version, go for it. Then it's your problem.
+
+### TODO
+
+- Everything
