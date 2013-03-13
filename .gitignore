@@ -10,3 +10,7 @@
 
 # Set up your own db
 config/database.yml
+
+# local rvm setup
+.rvmrc
+
