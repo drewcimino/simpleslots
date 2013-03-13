@@ -1,20 +1,19 @@
-<p id="notice"><%= notice %></p>
+<div id='user_info'>
+	<p>
+		<b>Username:</b> <%= @user.username %>
+	</p>
 
-<p>
-  <b>Username:</b>
-  <%= @user.username %>
-</p>
+	<p>
+		<b>Balance:</b> <%= @user.balance %>
+	</p>
+	<p>
+		<b>Games Played:</b> <%= @user.games.count %>
+	</p>
+	<%= link_to 'edit my info', edit_user_path(@user) %>
+</div>
+<br />
+<br />
+<div>
+	<%= button_to 'Play Now!', games_path, :class => 'btn btn-primary btn-large'%>
+</div>
 
-<p>
-  <b>Password:</b>
-  <%= @user.password %>
-</p>
-
-<p>
-  <b>Balance:</b>
-  <%= @user.balance %>
-</p>
-
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>

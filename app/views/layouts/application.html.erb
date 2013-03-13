@@ -2,18 +2,38 @@
 <html>
 <head>
   <title>Simpleslots</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
+  <%= stylesheet_link_tag    'application', :media => 'all' %>
+  <%= javascript_include_tag 'application', 'bootstrap.min' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-	
-<div class='flash'>
-	<p class="notice"><%= notice %></p>
-	<p class="alert"><%= alert %></p>
-</div>
+	<div class='navbar navbar-inner'>
+		<span id='account_options'>
+			<ul class='nav nav-pills pull-right'>
+				<% if user_signed_in? %>
+				<li>
+					<%= link_to "#{current_user.username}'s account", user_path(current_user) %>
+				</li>
+				<li>
+					<%= link_to 'Logout', destroy_user_session_path, :method => :delete %>        
+				</li>
+				<% else %>
+				<li>
+					<%= link_to 'Login', new_user_session_path  %>  
+	  		</li>
+				<% end %>
+			</ul>
+		</span>
+	</div>
 
-<%= yield %>
+	<div class='flash'>
+		<p class='notice'><%= notice %></p>
+		<!-- <p class='alert'><%= alert %></p> -->
+	</div>
+
+	<div id='main' class='row-fluid'>
+		<%= yield %>
+	</div>
 
 </body>
 </html>

@@ -12,16 +12,13 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :username %><br />
-    <%= f.text_field :username %>
+    <%= f.text_field :username, :placeholder => @user.username %>
   </div>
+	  <div class="field">
+			<%= f.email_field :email, :placeholder => @user.email %>
+	  </div>
   <div class="field">
-    <%= f.label :password %><br />
-    <%= f.text_field :password %>
-  </div>
-  <div class="field">
-    <%= f.label :balance %><br />
-    <%= f.number_field :balance %>
+		<%= f.text_field :password, :placeholder => 'Password - unchanged if blank' %>
   </div>
   <div class="actions">
     <%= f.submit %>
