@@ -11,10 +11,3 @@
  *= require_self
  *= require_tree .
  */
-
-body {
-	text-align:center;
-}
-#user_info a {
-	font-size:10px;
-}

@@ -1,0 +1,25 @@
+body {
+	text-align:center;
+}
+#user_info a {
+	font-size:10px;
+}
+#reels {
+	margin-top:30px;
+	margin-bottom:30px
+}
+.reel {
+	font-size:96px;
+	margin:0 15px 0 15px;
+}
+.ui-slider {
+	width:300px !important;
+	margin:auto !important;
+}
+#wager-label {
+	width:75px !important;
+}
+#form-fields {
+	width:80%;
+	margin:auto;
+}

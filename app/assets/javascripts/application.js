@@ -11,5 +11,18 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
-//= require jquery_ujs
 //= require_tree .
+
+
+$(function(){
+	$('form').on('click', 'a', function(){
+		console.log('clicked');
+		$.ajax({
+			url: 'derp',
+			method: 'PUT',
+			success: function(){
+				
+			}
+		})
+	});
+});

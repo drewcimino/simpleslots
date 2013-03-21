@@ -1,26 +1,26 @@
 <%= form_for(@user) do |f| %>
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
-
-      <ul>
-      <% @user.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.text_field :username, :placeholder => @user.username %>
-  </div>
-	  <div class="field">
+	<% if @user.errors.any? %>
+		<div id="error_explanation">
+			<h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+			<ul>
+			<% @user.errors.full_messages.each do |msg| %>
+				<li><%= msg %></li>
+			<% end %>
+			</ul>
+		</div>
+	<% end %>
+	<div id='edit_user_fields' class='row-fluid'>
+		<div class="field">
+			<%= f.text_field :username, :placeholder => @user.username %>
+		</div>
+		<div class="field">
 			<%= f.email_field :email, :placeholder => @user.email %>
-	  </div>
-  <div class="field">
-		<%= f.text_field :password, :placeholder => 'Password - unchanged if blank' %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+		</div>
+		<div class="field">
+			<%= f.text_field :password, :placeholder => 'Password - unchanged if blank' %>
+		</div>
+	</div>
+	<div class="actions">
+		<%= f.submit %>
+	</div>
 <% end %>

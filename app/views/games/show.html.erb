@@ -1,13 +1,22 @@
-<p>
-  <b>Wager:</b>
-  <%= @game.wager %>
-</p>
+<div id='reels'><%= render :partial => 'reels' %></div>
 
-<p>
-  <b>Payout:</b>
-  <%= @game.payout %>
-</p>
+<div>
+	<b>Balance:</b> <%= @user.balance %>
+</div>
 
+<%= form_for @game, :url => {:action => 'update'}, remote: true, :format => :json do |f| %>
+	<div data-role='fieldcontain'>
+		<label for='wager'>Wager:</label>
+		<input name='wager' id='wager' min="10" max="250" value="100" step="10" type="range" data-highlight='true'>
+	</div>
+	<%= f.hidden_field 'id', :value => @game.id %>
+	<%= link_to 'Spin!', game_path(@game), :class => 'btn btn-primary btn-large'%>
+<% end %>
 
-<%= link_to 'Edit', edit_game_path(@game) %> |
-<%= link_to 'Back', games_path %>
+<br />
+<br />
+<br />
+
+<pre>
+	<%= @game.to_yaml %>
+</pre>
